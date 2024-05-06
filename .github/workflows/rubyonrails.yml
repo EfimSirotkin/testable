@@ -39,6 +39,8 @@ jobs:
       # Add or replace test runners here
       - name: Run tests
         run: bin/rake
+      - name: Resolve Migration
+        run: bin/rails db:migrate RAILS_ENV=test
 
   lint:
     runs-on: ubuntu-latest
