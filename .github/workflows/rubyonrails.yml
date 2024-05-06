@@ -37,7 +37,7 @@ jobs:
       - name: Set up database schema
         run: bin/rails db:schema:load
       - name: Resolve Migration
-        run: bin/rails db:migrate RAILS_ENV=test
+        run: rake db:drop db:create db:migrate && bin/rails db:migrate RAILS_ENV=test
       # Add or replace test runners here
       - name: Run tests
         run: bin/rake
