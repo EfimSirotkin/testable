@@ -34,8 +34,6 @@ jobs:
         with:
           bundler-cache: true
       # Add or replace database setup steps here
-      - name: Drop DB
-        run: rake db:drop db:create db:migrate
       - name: Set up database schema
         run: bin/rails db:schema:load
       - name: Resolve Migration
