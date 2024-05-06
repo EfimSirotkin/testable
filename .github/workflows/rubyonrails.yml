@@ -34,10 +34,12 @@ jobs:
         with:
           bundler-cache: true
       # Add or replace database setup steps here
+      - name: Drop DB
+        run: rake db:drop db:create db:migrate
       - name: Set up database schema
         run: bin/rails db:schema:load
       - name: Resolve Migration
-        run: rake db:drop db:create db:migrate && bin/rails db:migrate RAILS_ENV=test
+        run:  bin/rails db:migrate RAILS_ENV=test
       # Add or replace test runners here
       - name: Run tests
         run: bin/rake
