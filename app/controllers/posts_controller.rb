@@ -1,6 +1,5 @@
 # frozen_string_literal: true
-
-# This is your post controller.
+#This is post controllers
 class PostsController < ApplicationController
   before_action :set_post, only: %i[show edit update destroy]
 
@@ -10,9 +9,7 @@ class PostsController < ApplicationController
   end
 
   # GET /posts/1 or /posts/1.json
-  def show
-    @post.update(views: @post.views + 1)
-  end
+  def show; end
 
   # GET /posts/new
   def new
@@ -69,6 +66,6 @@ class PostsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def post_params
-    params.require(:post).permit(:title, :body)
+    params.require(:post).permit(:title, :bodytext)
   end
 end

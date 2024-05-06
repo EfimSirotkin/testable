@@ -1,5 +1,4 @@
 # frozen_string_literal: true
-
-# This is concerned with helping us, idk
+#This is helping controller
 module PostsHelper
 end
